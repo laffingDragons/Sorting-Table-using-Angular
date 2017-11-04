@@ -1,0 +1,36 @@
+<html ng-app="myModule">
+    <head>
+        <title>Table</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script src="Angular/app.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body ng-controller="myController as employee">
+        
+        <strong style="background-color: #4CAF50 ">SortBy</strong> <select ng-model="sortColumn"><br />
+        <option value="name">Name ASC</option>
+            <option value="+dateOfBirth">Date of Birth ASC</option>
+            <option value="+gender">Gender ASC</option>
+            <option value="-salary">Salary DESC</option>
+        </select>
+        
+        <table>
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+              </tr>
+            </thead>
+              <tbody>
+                  <tr ng-repeat="employees in employee.employee | orderBy : sortColumn">
+                      <td> {{ employees.name }}</td>
+                      <td> {{ employees.dateOfBirth | date: "dd/MM/yyyy"}}</td>
+                      <td> {{ employees.gender }}</td>
+                      <td> {{ employees.salary }}</td>
+                  </tr>
+            </tbody>  
+        </table>
+    </body>
+</html>
