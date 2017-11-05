@@ -7,12 +7,14 @@
     </head>
     <body ng-controller="myController as employee">
         
-        <strong style="background-color: #4CAF50 ">SortBy</strong> <select ng-model="sortColumn"><br />
+        <strong style="background-color: #4CAF50 ">SortBy</strong> <select ng-model="sortColumn">
+        
         <option value="name">Name ASC</option>
             <option value="+dateOfBirth">Date of Birth ASC</option>
             <option value="+gender">Gender ASC</option>
             <option value="-salary">Salary DESC</option>
         </select>
+        <br /><br />
         
         <table>
           <thead>
